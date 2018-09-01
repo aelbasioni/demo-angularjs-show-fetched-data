@@ -109,11 +109,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\styles.css" />
     <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
+    <Content Include="Index.html" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\chartjs\Chart.Doughnut.js" />
+    <Content Include="Scripts\chartjs\Chart.js" />
+    <Content Include="Scripts\chartjs\Chart.min.js" />
+    <Content Include="Scripts\chartjs\PieChartOption.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\PricesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -121,9 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="App_Data\data.json" />
+    <Content Include="package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,8 +140,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Content\imgs\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
