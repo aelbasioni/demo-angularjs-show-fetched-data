@@ -1,13 +1,20 @@
 {
   "name": "prices_show",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "AngularJS and .net web app to show how to provide the user information about the price of some product"
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [ ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aelbasioni/demo-angularjs-show-fetched-data.git"
+  },
+  "author": "Asmaa El-basioni <a.elbasioni@gmail.com> (https://github.com/aelbasioni)",
+  "bugs": {
+    "url": "https://github.com/aelbasioni/demo-angularjs-show-fetched-data/issues"
+  },
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
