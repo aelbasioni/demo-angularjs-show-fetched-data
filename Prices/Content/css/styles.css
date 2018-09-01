@@ -6,6 +6,9 @@
     margin:auto 10px auto 0;
 }
 
+.m-b-5 {
+    margin-bottom:5px;
+}
 .table th,.table >tbody> tr>td:first-child {
     text-align:center;
     background-color:#D0D1D7;

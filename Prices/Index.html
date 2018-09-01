@@ -9,7 +9,6 @@
 
     <!-- Minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="Content/css/styles.min.css">
 
     <!-- Optional IE8 Support -->
@@ -21,7 +20,7 @@
 <body ng-cloak ng-controller="demoController">
     <div class="container">
 
-        <h1 style="margin-bottom:40px"><img src="Content/imgs/roomi_logo.png" class="item_logo" />Roomi Cheese Prices</h1>
+        <h1 style="margin-bottom:40px"><img src="Content/imgs/roomi_logo.png" class="item_logo" alt=""/>Roomi Cheese Prices</h1>
 
         <!-- Loading -->
         <!-- Error placeholder -->
@@ -29,11 +28,11 @@
             <span id="err_msg"></span>
         </div>
         <!-- End Error placeholder -->
-        <!--Employees data -->
+        <!--Prices area -->
         <div ng-if="cheeseData.prices && cheeseData.prices.length > 0">
-            <a href="javascript:void();" ng-click="getCheesePrices()" class="pull-right" title="Reload prices" aria-label="reload prices" style="font-size:1.5em">🗘</a>
+            <a href="javascript:void();" ng-click="getCheesePrices()" class="btn btn-primary m-b-5 pull-right" title="Reload prices" aria-label="reload prices">🗘</a>
             <span id="emp_count_txt" class="pull-left">{{(cheeseData.prices)?cheeseData.prices.length +' items':''}}</span>
-            <table class="table table-condensed table-striped table-bordered" id="emp_tbl">
+            <table class="table table-condensed table-striped table-bordered">
                 <thead>
                     <tr>
                         <th colspan="10">Oldness</th>
@@ -73,5 +72,4 @@
     <!--my app script-->
     <script src="Scripts/app.min.js"></script>
 </body>
-
 </html>
