@@ -50,7 +50,11 @@ const lineOptions = {
     datasetFill: false,
     //Boolean - Re-draw chart on page resize
     responsive: true,
-
+    title: {
+        display: true,
+        text: 'Custom Chart Title'
+    }
+   
 };
 
 
@@ -156,9 +160,10 @@ app.controller('demoController', ['$scope', 'pricesService', function ($scope, p
         // ref: http://www.chartjs.org/docs/#line-chart-introduction
         const lineData = {
             labels: $scope.cheeseData.years,
-            datasets: _generateChartDataset()
+            datasets: _generateChartDataset()         
         };
 
+      
         // render chart
         const ctx = document.getElementById("lineChart").getContext("2d");
         const lineChart = new Chart(ctx).Line(lineData, lineOptions);

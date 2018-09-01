@@ -53,6 +53,7 @@
         <!--End prices area -->
         <!--Chart and its legend-->
         <div class="chart_area">
+            <div class="chart_title" ng-if="cheeseData.prices && cheeseData.prices.length > 0">Cheese Types Prices over Time</div>
             <canvas id="lineChart" style="height: 200px"></canvas>
         </div>
         <div id="line-legend" class="chart-legend"></div>

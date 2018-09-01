@@ -130,10 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\styles.css" />
+    <Content Include="Content\css\styles.min.css" />
     <Content Include="Global.asax" />
     <Content Include="gulpfile.js" />
     <Content Include="Index.html" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\app.min.js" />
     <Content Include="Scripts\chartjs\Chart.Doughnut.js" />
     <Content Include="Scripts\chartjs\Chart.js" />
     <Content Include="Scripts\chartjs\Chart.min.js" />
@@ -156,6 +158,9 @@
     </Content>
     <Content Include="App_Data\data.json" />
     <Content Include="package.json" />
+    <Content Include="Content\css\styles.min.css.map" />
+    <Content Include=".babelrc" />
+    <Content Include="Scripts\app.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

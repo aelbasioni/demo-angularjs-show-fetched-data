@@ -1,4 +1,7 @@
-﻿.item_logo {
+﻿body {
+    margin-bottom:30px;
+}
+.item_logo {
     height:50px;
     border-radius:2px;
     padding:1px;
@@ -45,6 +48,12 @@
     max-width:600px;
 }
 
+.chart_title {
+    margin:10px auto 30px;
+    text-align:center;
+    font-size:1.7em;
+
+}
 /*********************************************
 *            End Start Charts 
 **********************************************/
