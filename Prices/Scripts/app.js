@@ -1,4 +1,6 @@
-﻿
+﻿/**
+ * Certain predefined colors to be used in the chart:
+ */
 const chartColors = [
     'rgb(255, 99, 132)',
     'rgb(255, 159, 64)',
@@ -17,6 +19,10 @@ const chartColors = [
 
 ];
 
+
+/*
+ * Line chart settings:
+ */
 const lineOptions = {
     ///Boolean - Whether grid lines are shown across the chart
     scaleShowGridLines: true,
@@ -48,16 +54,25 @@ const lineOptions = {
 };
 
 
+
 const app = angular.module('testApp', []);
 app.constant('serviceBasePath', window.location.origin);
 
 app.factory('pricesService', ['$http', '$q', 'serviceBasePath', function ($http, $q, serviceBasePath) {
     const fac = {};
+
+    /**
+     * We can fetch the data either from JSON file or from sqlite database.
+     * Both urls return the same data format
+     */
+    const JSON_FILE_URL = "/api/FetchCheesePrices";
+    const SQLITE_DATABASE_URL = "/api/FetchCheesePrices_v2";
+
     fac.getCheesePrices = () => {
         const defer = $q.defer();
         $http({
             method: 'GET',
-            url: serviceBasePath + "/api/FetchCheesePrices",
+            url: serviceBasePath + SQLITE_DATABASE_URL,
             data: {}
         }).then((response) => {
             defer.resolve(response.data);
@@ -78,9 +93,14 @@ app.controller('demoController', ['$scope', 'pricesService', function ($scope, p
 
 
 
+    /*
+     * Get the pricaes:
+     */
     $scope.getCheesePrices =  () => {
         $scope.dataStatus = "Loading ...";
         pricesService.getCheesePrices().then((data) =>{
+
+            //read the data and if exist, fill the related variables
             if (data && data.cheese_data) {
                 $scope.cheeseData.years = data.cheese_data.years;
                 if ($scope.cheeseData.years && $scope.cheeseData.years.length > 0) {
@@ -92,11 +112,12 @@ app.controller('demoController', ['$scope', 'pricesService', function ($scope, p
                 }
             }
             _drawChart();
+
         }, (error) => {
             $scope.dataStatus = "";
             console.log("error", error)
 
-            //show the error
+            //show errors
             const errDivContainer = document.getElementById('err_container');
             const errDiv = document.getElementById('err_msg');
             errDiv.innerText = error.data.ExceptionMessage;
@@ -106,6 +127,9 @@ app.controller('demoController', ['$scope', 'pricesService', function ($scope, p
     };
 
 
+    /**
+     * Generate the dataset of the Line Chart:
+     */
     function _generateChartDataset() {
         const dataSet = [];
         const arrayLength = $scope.cheeseData.prices.length;
@@ -124,11 +148,14 @@ app.controller('demoController', ['$scope', 'pricesService', function ($scope, p
         return dataSet;
     }
 
-    // LINE CHART
+
+    /* 
+     * LINE CHART
+     */
     function _drawChart() {
         // ref: http://www.chartjs.org/docs/#line-chart-introduction
         const lineData = {
-            labels: $scope.cheeseData.names,
+            labels: $scope.cheeseData.years,
             datasets: _generateChartDataset()
         };
 
