@@ -3,7 +3,7 @@
 
 A simple demo responsive website that shows how to provide the user information about the price of 6 types of Cheese according to its oldness. The data will be shown, in the same page, in a grid as well as in a line graph across these 6 types.
 
-![project home page screenshot](http://link)
+![project home page screenshot](https://github.com/aelbasioni/demo-angularjs-show-fetched-data/blob/master/Screenshot.PNG)
 
 ## Project Anatomy
 
@@ -11,7 +11,7 @@ A simple demo responsive website that shows how to provide the user information 
 
 -	A .net back-end that is callable via a simple Web API call to get the data
 
--	AngularJS front-end that has a grid + a chart ([chartjs](http://www.chartjs.org)) based on the data returned by back end
+-	AngularJS front-end that has a grid + a chart ([ChartJS](http://www.chartjs.org)) based on the data returned by back end
 
 - Gulp task runner to transpile JS files,  add vendor prefixes to CSS rules,  and apply minification, bundling and source-map generation for JS and CSS files, and that's during the development
 
