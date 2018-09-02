@@ -52,7 +52,7 @@ const lineOptions = {
     responsive: true,
     title: {
         display: true,
-        text: 'Custom Chart Title'
+        text: 'Cheese Types Prices over Time'
     }
    
 };
@@ -76,7 +76,7 @@ app.factory('pricesService', ['$http', '$q', 'serviceBasePath', function ($http,
         const defer = $q.defer();
         $http({
             method: 'GET',
-            url: serviceBasePath + SQLITE_DATABASE_URL,
+            url: serviceBasePath + JSON_FILE_URL,
             data: {}
         }).then((response) => {
             defer.resolve(response.data);
