@@ -1,7 +1,7 @@
 # Prices Display Demo (Grid & Chart)
 
 
-A simple demo responsive website that shows how to provide the user information about the price of 6 types of Roomi Cheese according to its oldness. The data will be shown, in the same page, in a grid as well as in a line graph across these 6 types.
+A simple demo responsive website that shows how to provide the user information about the price of 6 types of Cheese according to its oldness. The data will be shown, in the same page, in a grid as well as in a line graph across these 6 types.
 
 
 ## Project Anatomy
